@@ -23,18 +23,18 @@ export function Navbar() {
             </div>
 
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
-                <Link to="/" className={styles.navLink}>Inicio</Link>
-                <Link to="/about" className={styles.navLink}>Nosotros</Link>
-                <Link to="/ser-mason" className={styles.navLink}>Ser Masón</Link>
-                <Link to="/faq" className={styles.navLink}>FAQ</Link>
-                <Link to="/contacto" className={styles.navLink}>Contacto</Link>
-                <Link to="/store" className={styles.navLink}>Tienda</Link>
+                <Link to="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Inicio</Link>
+                <Link to="/about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Nosotros</Link>
+                <Link to="/ser-mason" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Ser Masón</Link>
+                <Link to="/faq" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>FAQ</Link>
+                <Link to="/contacto" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Contacto</Link>
+                <Link to="/store" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Tienda</Link>
 
                 {user && (
                     <>
-                        <Link to="/dashboard" className={styles.navLink}>Mi Logia</Link>
-                        <Link to="/library" className={styles.navLink}>Biblioteca</Link>
-                        {isAdmin && <Link to="/admin" className={`${styles.navLink} ${styles.adminLink}`}>Admin</Link>}
+                        <Link to="/dashboard" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Mi Logia</Link>
+                        <Link to="/library" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>Biblioteca</Link>
+                        {isAdmin && <Link to="/admin" className={`${styles.navLink} ${styles.adminLink}`} onClick={() => setIsMenuOpen(false)}>Admin</Link>}
                     </>
                 )}
             </div>
