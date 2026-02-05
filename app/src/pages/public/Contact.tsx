@@ -7,6 +7,7 @@ export function Contact() {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
+        phone: '',
         message: ''
     })
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -26,6 +27,7 @@ export function Contact() {
                 .insert([{
                     full_name: formData.fullName,
                     email: formData.email,
+                    phone: formData.phone,
                     message: formData.message
                 }])
 
@@ -33,14 +35,14 @@ export function Contact() {
 
             // 2. Preparar mensaje para WhatsApp
             const waNumber = "523300000000" // NUMERO DE EJEMPLO - El usuario debería configurar el real
-            const waMessage = `Hola, mi nombre es ${formData.fullName}. Estoy interesado en la Masonería.\n\nEmail: ${formData.email}\nMotivo: ${formData.message}`
+            const waMessage = `Hola, mi nombre es ${formData.fullName}.\n\nTeléfono: ${formData.phone}\nEmail: ${formData.email}\nMotivo: ${formData.message}`
             const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`
 
             // 3. Abrir WhatsApp
             window.open(waUrl, '_blank')
 
             setStatus('success')
-            setFormData({ fullName: '', email: '', message: '' })
+            setFormData({ fullName: '', email: '', phone: '', message: '' })
         } catch (error) {
             console.error('Error saving contact request:', error)
             setStatus('error')
@@ -124,6 +126,19 @@ export function Contact() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         placeholder="tu@email.com"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label>Teléfono (WhatsApp)</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Ej. +52 33 0000 0000"
                                         required
                                     />
                                 </div>
