@@ -28,6 +28,17 @@
   padding: 0;
 }
 
+/* GLOBAL RESPONSIVE MEDIA RESET */
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--color-bg-light);
