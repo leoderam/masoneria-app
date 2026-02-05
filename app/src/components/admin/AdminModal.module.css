@@ -14,14 +14,14 @@
 
 .modal {
     background: #ffffff;
-    width: 100%;
+    width: 90%;
     max-width: 550px;
     border-radius: 16px;
     padding: 2rem;
     position: relative;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     animation: modalAppear 0.3s ease-out;
-    max-height: 95vh;
+    max-height: 90vh;
     overflow-y: auto;
 }
 
