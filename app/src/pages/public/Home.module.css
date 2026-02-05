@@ -1,0 +1,462 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    /* Remove default gap, control with padding */
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 8rem 1rem 6rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 40px 40px;
+    /* Modern curved bottom */
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 54, 93, 0.6) 0%, rgba(26, 54, 93, 0.3) 100%);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+}
+
+.heroSymbol {
+    width: 140px;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.heroActions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.ctaButton {
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+}
+
+.primaryBtn {
+    background-color: var(--color-gold);
+    color: var(--color-primary-blue);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.primaryBtn:hover {
+    background-color: #F3E5AB;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+
+.secondaryBtn {
+    background-color: transparent;
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.secondaryBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* INTRO SECTION */
+.introduction {
+    padding: 6rem 1rem;
+    text-align: center;
+    background-color: var(--color-bg-white);
+}
+
+.introText {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.introText h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.introText p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+/* FEATURES SECTION */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: -4rem auto 4rem;
+    /* Overlap with hero slightly if desired, or just standard margin */
+    margin-top: 0;
+}
+
+.featureCard {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: left;
+    /* Modern clean left align */
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-gold);
+}
+
+.iconWrapper {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(26, 54, 93, 0.05);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.featureIcon {
+    color: var(--color-primary-blue);
+    width: 30px;
+    height: 30px;
+}
+
+.featureCard h3 {
+    color: var(--color-text-dark);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.featureCard p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* GLOBAL SECTION */
+.globalSection {
+    background-color: var(--color-white);
+    padding: 6rem 2rem;
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.globalContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.globalText h2 {
+    font-size: 2.5rem;
+    color: var(--color-black);
+    margin-bottom: 1.5rem;
+}
+
+.globalText p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.benefitsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.benefitsList li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--color-primary-blue);
+}
+
+.globalImageWrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.globalImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.globalImageWrapper:hover .globalImage {
+    transform: scale(1.03);
+}
+
+/* JOURNEY SECTION */
+.journeySection {
+    background-color: var(--color-bg-white);
+    padding: 6rem 2rem;
+}
+
+.journeyHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.journeyHeaderImage {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.journeyContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.journeyText h2 {
+    font-size: 2.5rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.journeyText p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+.journeyImageWrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.journeyImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.journeyImageWrapper:hover .journeyImage {
+    transform: scale(1.05);
+}
+
+/* MULTIMEDIA REELS SECTION */
+.multimediaSection {
+    background-color: #0f172a;
+    /* Dark contrast for video */
+    padding: 6rem 2rem;
+    color: var(--color-white);
+    text-align: center;
+}
+
+.multimediaSection h2 {
+    font-size: 2.5rem;
+    color: var(--color-gold);
+    margin-bottom: 3rem;
+}
+
+.reelsGrid {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Hide scrollbar for clean look but allow scroll */
+.reelsGrid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reelsGrid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reelsGrid::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+}
+
+.reelCard {
+    width: 250px;
+    height: 440px;
+    /* 9:16 Aspect Ratio approx */
+    background-color: #1e293b;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.reelCard:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-gold);
+}
+
+.reelThumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.reelCard:hover .reelThumbnail {
+    opacity: 1;
+}
+
+.playOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+}
+
+.reelCard:hover .playOverlay {
+    background: var(--color-gold);
+    color: var(--color-black);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.reelInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    text-align: left;
+}
+
+.reelInfo h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.reelInfo span {
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .globalContent {
+        grid-template-columns: 1fr;
+    }
+
+    .journeyContent {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 6rem;
+    }
+}

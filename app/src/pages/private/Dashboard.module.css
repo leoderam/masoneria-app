@@ -1,0 +1,203 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.header h1 {
+    color: var(--color-gold);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: var(--color-text-muted);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.membershipCard {
+    background-color: var(--color-primary-blue);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-gold);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cardIcon {
+    color: var(--color-gold);
+    width: 32px;
+    height: 32px;
+}
+
+.membershipCard h3 {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.grade {
+    color: var(--color-gold-light);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.cargo {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.noMembership {
+    grid-column: 1 / -1;
+    background-color: rgba(200, 50, 50, 0.1);
+    border: 1px solid #c53030;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #fcebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section {
+    background-color: var(--color-white);
+    /* White background for readability */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Subtle border */
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-blue);
+    border-bottom: 2px solid var(--color-gold);
+    /* Gold accent line instead of text color */
+    padding-bottom: 0.5rem;
+}
+
+.sectionHeader h2 {
+    font-size: 1.25rem;
+}
+
+.empty {
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.sectionSub {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+}
+
+.eventsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.eventCard {
+    display: flex;
+    gap: 1.5rem;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.eventCard:hover {
+    transform: translateX(10px);
+}
+
+.eventDate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 65px;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+
+.eventDate .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary-blue);
+}
+
+.eventDate .month {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    letter-spacing: 1px;
+}
+
+.eventContent {
+    flex: 1;
+}
+
+.eventContent h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary-blue);
+    margin-bottom: 0.25rem;
+}
+
+.eventTime {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.eventDesc {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.gradeBadge {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem;
+    background: #f1f5f9;
+    border-radius: 12px;
+    color: #64748b;
+    border: 2px dashed #cbd5e1;
+}

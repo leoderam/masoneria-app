@@ -1,0 +1,68 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary-blue);
+    border-bottom: 2px solid var(--color-gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-heading);
+    /* Apply Cinzel font */
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.navLink {
+    color: var(--color-gold);
+    /* Gold like the Square */
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.navLink:hover {
+    color: var(--color-gold-light);
+}
+
+.active {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .mobileMenu {
+        display: block;
+        color: var(--color-gold);
+    }
+}
