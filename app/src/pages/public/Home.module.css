@@ -512,3 +512,17 @@
     text-align: center;
     margin-top: 4rem;
 }
+
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .featureCard {
+        padding: 1rem;
+    }
+    .featureCard h3 {
+        font-size: 1rem;
+    }
+}
