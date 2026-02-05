@@ -132,6 +132,8 @@
 
     /* Mobile Group Styling */
     .navGroup {
+        display: block;
+        width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -151,13 +153,20 @@
     }
 
     .groupContent {
+        position: static;
+        transform: none;
+        width: 100%;
         display: none;
         background: rgba(0, 0, 0, 0.1);
+        border: none;
+        box-shadow: none;
+        padding: 0 0 1rem 0;
     }
 
     .groupContent.expanded {
         display: flex;
         flex-direction: column;
+        animation: none;
     }
 
     .groupContent .navLink {
