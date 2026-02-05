@@ -17,6 +17,7 @@ export function ManageProductModal({ isOpen, onClose, product, onSuccess }: Mana
     const [price, setPrice] = useState('')
     const [stock, setStock] = useState('')
     const [imageUrl, setImageUrl] = useState('')
+    const [driveUrl, setDriveUrl] = useState('')
     const [description, setDescription] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -26,12 +27,14 @@ export function ManageProductModal({ isOpen, onClose, product, onSuccess }: Mana
             setPrice(product.price?.toString() || '')
             setStock(product.stock_quantity?.toString() || '0')
             setImageUrl(product.image_url || '')
+            setDriveUrl(product.drive_url || '')
             setDescription(product.description || '')
         } else {
             setName('')
             setPrice('')
             setStock('0')
             setImageUrl('')
+            setDriveUrl('')
             setDescription('')
         }
     }, [product, isOpen])
@@ -46,6 +49,7 @@ export function ManageProductModal({ isOpen, onClose, product, onSuccess }: Mana
             price: parseFloat(price),
             stock_quantity: parseInt(stock),
             image_url: imageUrl,
+            drive_url: driveUrl,
             description,
             is_public: true
         }
@@ -113,6 +117,14 @@ export function ManageProductModal({ isOpen, onClose, product, onSuccess }: Mana
                         <div className={styles.inputWrapper}>
                             <ImageIcon className={styles.inputIcon} size={18} />
                             <input className={styles.formInput} type="text" value={imageUrl} onChange={e => setImageUrl(e.target.value)} placeholder="https://..." />
+                        </div>
+                    </div>
+
+                    <div className={styles.fieldGroup}>
+                        <label>Link de Google Drive (Opcional)</label>
+                        <div className={styles.inputWrapper}>
+                            <Box className={styles.inputIcon} size={18} />
+                            <input className={styles.formInput} type="text" value={driveUrl} onChange={e => setDriveUrl(e.target.value)} placeholder="https://drive.google.com/..." />
                         </div>
                     </div>
 

@@ -10,6 +10,7 @@ interface Product {
     description: string
     price: number
     image_url: string | null
+    drive_url?: string | null
 }
 
 export function Store() {
@@ -45,13 +46,21 @@ export function Store() {
             ) : (
                 <div className={styles.productGrid}>
                     {products.map(product => {
-                        const hasImage = product.image_url && typeof product.image_url === 'string' && product.image_url.trim() !== ''
+                        // Helper to convert Google Drive sharing links to direct image links
+                        const getDirectDriveLink = (url: string) => {
+                            if (!url) return url;
+                            const driveMatch = url.match(/\/(?:d|file\/d|open\?id=)([\w-]+)/);
+                            if (driveMatch && driveMatch[1]) {
+                                return `https://lh3.googleusercontent.com/u/0/d/${driveMatch[1]}=w1000`;
+                            }
+                            return url;
+                        };
 
-                        // Si no tiene imagen, o es una URL rota de Unsplash que falló antes
-                        // usamos un placeholder local o el default generado
-                        // Usamos un servicio de placeholders robusto si no hay imagen o falla
-                        const placeholderUrl = 'https://placehold.co/400x400/1a1a1a/e2b714?text=Masoneria'
-                        const displayImage = (hasImage ? product.image_url : placeholderUrl) as string
+                        const rawImageUrl = product.image_url && typeof product.image_url === 'string' ? product.image_url.trim() : '';
+                        const hasImage = rawImageUrl !== '';
+                        const placeholderUrl = 'https://placehold.co/400x400/1a1a1a/e2b714?text=Masoneria';
+
+                        const displayImage = hasImage ? getDirectDriveLink(rawImageUrl) : placeholderUrl;
 
                         return (
                             <div key={product.id} className={styles.productCard}>
@@ -73,13 +82,27 @@ export function Store() {
                                     <p>{product.description}</p>
                                     <div className={styles.productFooter}>
                                         <span className={styles.price}>${product.price}</span>
-                                        <button
-                                            className={styles.buyButton}
-                                            onClick={() => addToCart(product)}
-                                        >
-                                            <ShoppingCart size={18} />
-                                            Añadir
-                                        </button>
+                                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                            {product.drive_url && (
+                                                <a
+                                                    href={product.drive_url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className={styles.buyButton}
+                                                    style={{ background: '#34a853' }} // Google Green
+                                                    title="Ver en Google Drive"
+                                                >
+                                                    <Box size={18} />
+                                                </a>
+                                            )}
+                                            <button
+                                                className={styles.buyButton}
+                                                onClick={() => addToCart(product)}
+                                            >
+                                                <ShoppingCart size={18} />
+                                                Añadir
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
