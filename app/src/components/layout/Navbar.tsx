@@ -77,7 +77,7 @@ export function Navbar() {
                 )}
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: 15, marginLeft: 'auto', paddingRight: '1rem' }}>
+            <div className={styles.navActions}>
                 {!user ? (
                     <Link to="/login" className={styles.navLink} style={{ fontSize: '0.9rem', fontWeight: 'bold' }}>Acceso</Link>
                 ) : (

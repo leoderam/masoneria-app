@@ -463,6 +463,7 @@ export function AdminManagement() {
                                     <td>{new Date(r.created_at).toLocaleDateString()}</td>
                                     <td style={{ fontWeight: 600 }}>{r.full_name}</td>
                                     <td>{r.email}</td>
+                                    <td>{r.phone || '-'}</td>
                                     <td style={{ fontSize: '0.85rem', maxWidth: '300px' }}>{r.message}</td>
                                     <td>
                                         <select
@@ -488,7 +489,7 @@ export function AdminManagement() {
                                     </td>
                                 </tr>
                             )) : (
-                                <tr><td colSpan={6} style={{ textAlign: 'center', padding: '2rem' }}>No hay solicitudes pendientes</td></tr>
+                                <tr><td colSpan={7} style={{ textAlign: 'center', padding: '2rem' }}>No hay solicitudes pendientes</td></tr>
                             )}
                         </tbody>
                     </table>
