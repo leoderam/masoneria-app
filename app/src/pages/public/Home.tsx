@@ -30,7 +30,22 @@ export function Home() {
             const tl = gsap.timeline()
             tl.fromTo(`.${styles.heroSymbol}`,
                 { opacity: 0, y: -50, scale: 0.8 },
-                { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "power3.out" }
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    onComplete: () => {
+                        gsap.to(`.${styles.heroSymbol}`, {
+                            y: -15,
+                            duration: 3,
+                            ease: "power1.inOut",
+                            yoyo: true,
+                            repeat: -1
+                        });
+                    }
+                }
             )
                 .fromTo(`.${styles.heroTitle}`,
                     { opacity: 0, y: 30 },
