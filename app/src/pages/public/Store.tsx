@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../lib/supabase'
 import styles from './PublicPages.module.css'
-import { ShoppingCart, Tag } from 'lucide-react'
+import { ShoppingCart, Tag, Box } from 'lucide-react'
 import { useCart } from '../../contexts/CartContext'
 
 interface Product {
