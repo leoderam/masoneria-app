@@ -18,7 +18,8 @@ export function CartSidebar() {
                 onClick={() => setIsCartOpen(false)}
             />
             <div style={{
-                position: 'fixed', top: 0, right: 0, height: '100vh', width: '400px',
+                position: 'fixed', top: 0, right: 0, height: '100vh',
+                width: '100%', maxWidth: '400px',
                 background: 'var(--color-bg-primary)', boxShadow: '-4px 0 15px rgba(0,0,0,0.3)',
                 zIndex: 1000, display: 'flex', flexDirection: 'column',
                 transition: 'transform 0.3s ease'

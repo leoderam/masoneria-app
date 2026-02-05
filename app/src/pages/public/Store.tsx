@@ -49,7 +49,9 @@ export function Store() {
 
                         // Si no tiene imagen, o es una URL rota de Unsplash que falló antes
                         // usamos un placeholder local o el default generado
-                        const displayImage = (hasImage ? product.image_url : '/images/products/default.png') as string
+                        // Usamos un servicio de placeholders robusto si no hay imagen o falla
+                        const placeholderUrl = 'https://placehold.co/400x400/1a1a1a/e2b714?text=Masoneria'
+                        const displayImage = (hasImage ? product.image_url : placeholderUrl) as string
 
                         return (
                             <div key={product.id} className={styles.productCard}>
@@ -58,10 +60,9 @@ export function Store() {
                                         src={displayImage}
                                         alt={product.name}
                                         onError={(e) => {
-                                            // Fallback final a la imagen por defecto local si falla la del DB
                                             const target = e.target as HTMLImageElement
-                                            if (target.src.indexOf('/images/products/default.png') === -1) {
-                                                target.src = '/images/products/default.png'
+                                            if (target.src !== placeholderUrl) {
+                                                target.src = placeholderUrl
                                             }
                                         }}
                                         style={{ opacity: 1 }}
