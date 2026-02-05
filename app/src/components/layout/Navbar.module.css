@@ -22,35 +22,88 @@
 
 .navLinks {
     display: flex;
-    gap: 3rem;
+    gap: 2.5rem;
     flex: 1;
     justify-content: center;
     margin: 0 2rem;
+    align-items: center;
+}
+
+.navGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.groupToggle {
+    background: none;
+    border: none;
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.groupToggle:hover {
+    color: var(--color-gold-light);
+}
+
+.groupContent {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--color-primary-blue);
+    border: 1px solid var(--color-gold);
+    border-radius: 8px;
+    padding: 1rem;
+    min-width: 200px;
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.groupContent.expanded {
+    display: flex;
+    animation: fadeInDown 0.3s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(10px);
+    }
 }
 
 .navLink {
     color: var(--color-gold);
-    /* Gold like the Square */
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    text-decoration: none;
     letter-spacing: 0.08em;
     text-decoration: none;
     transition: all 0.3s ease;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     padding: 0.5rem 0;
     border-bottom: 2px solid transparent;
+    white-space: nowrap;
 }
 
 .navLink:hover {
     color: var(--color-gold-light);
-}
-
-.active {
-    color: var(--color-gold);
-    font-weight: bold;
 }
 
 .mobileMenu {
