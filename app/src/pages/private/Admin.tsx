@@ -451,6 +451,7 @@ export function AdminManagement() {
                                 <th>Fecha</th>
                                 <th>Nombre</th>
                                 <th>Email</th>
+                                <th>Teléfono</th>
                                 <th>Mensaje</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>

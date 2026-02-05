@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 2.5rem;
+    padding: 1.2rem 2rem;
     background-color: var(--color-primary-blue);
     border-bottom: 2px solid var(--color-gold);
     position: sticky;
@@ -17,15 +17,16 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: var(--font-heading);
-    /* Apply Cinzel font */
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .navLinks {
     display: flex;
     gap: 2.5rem;
-    flex: 1;
+    flex: 2;
     justify-content: center;
-    margin: 0 2rem;
     align-items: center;
 }
 
@@ -128,6 +129,10 @@
         max-height: 80vh;
         overflow-y: auto;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        flex: none;
     }
 
     /* Mobile Group Styling */
