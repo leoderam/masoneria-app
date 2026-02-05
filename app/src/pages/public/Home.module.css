@@ -149,12 +149,11 @@
 /* FEATURES SECTION */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-    padding: 4rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 1rem;
     max-width: 1200px;
-    margin: -4rem auto 4rem;
-    /* Overlap with hero slightly if desired, or just standard margin */
+    margin: -2rem auto 2rem;
     margin-top: 0;
 }
 
@@ -459,4 +458,57 @@
     .hero {
         padding-top: 6rem;
     }
+}
+.degreesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.degreeCard {
+    background: var(--color-white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--color-primary-blue);
+}
+
+.degreeCard:hover {
+    transform: translateY(-5px);
+}
+
+.degreeIcon {
+    width: 60px;
+    height: 60px;
+    background: var(--color-primary-blue);
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.degreeFeatures {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.degreeFeatures li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.journeyCta {
+    text-align: center;
+    margin-top: 4rem;
 }

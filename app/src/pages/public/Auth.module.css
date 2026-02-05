@@ -7,13 +7,14 @@
 
 .authForm {
     background-color: var(--color-primary-blue);
-    padding: 3rem;
+    padding: 2.5rem;
     border-radius: 12px;
     border: 1px solid var(--color-gold);
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 1rem;
 }
 
 .authIcon {
@@ -29,7 +30,7 @@
 
 .inputGroup {
     text-align: left;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .inputGroup label {
